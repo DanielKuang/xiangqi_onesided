@@ -1,4 +1,4 @@
-import 'React';
+import React from 'react';
 import initBoard from '../helpers/initBoard.js';
 import Board from './board.js';
 import '../../public/css/index.css'

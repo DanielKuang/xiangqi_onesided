@@ -1,4 +1,4 @@
-import 'React';
+import React from 'react';
 import '../../public/css/index.css'
 import Square from './square.js';
 
