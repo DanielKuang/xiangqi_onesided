@@ -19,7 +19,8 @@ export default class Game extends React.Component {
     // squares[i].style = {...squares[i].style, backgroundColor: "RGB(111,143,114)"};
 
     clickHandler(i){
-        if (this.state.winner !== 'None'){
+        const {playerTurn, indxOfSelectedPiece, winner, squares} = this.state
+        if (winner !== 'None'){
             this.setState({status:'This round is complete. Please click retry for another round.'});
         }
         else if (indxOfSelectedPiece === null){
@@ -28,7 +29,7 @@ export default class Game extends React.Component {
             }
             else {
                 squares[i].style = {...squares[i].style, backgroundColor: "RGB(111,143,114)"};
-                nextPlayer = playerTurn === 1 ? 2 : 1;
+                let nextPlayer = playerTurn === 1 ? 2 : 1;
                 this.setState({status:'', indxOfSelectedPiece:i, playerTurn:nextPlayer});
             }
         }
@@ -39,8 +40,8 @@ export default class Game extends React.Component {
             }
             else {
                 const squares = this.state.squares.slice();
-                const numBlackPieces = this.state.blackPieces;
-                const numRedPieces = this.state.redPieces;
+                let numBlackPieces = this.state.blackPieces;
+                let numRedPieces = this.state.redPieces;
                 const winner = this.checkForWinner();
                 const nextPlayer = (this.state.playerTurn === 1 ? 2 : 1);
                 if (squares[i]) {
@@ -57,7 +58,8 @@ export default class Game extends React.Component {
         }
     }
 
-    checkIfLegal(i){
+    checkIfLegal = (i) =>{
+        const {indxOfSelectedPiece} = this.state
         let selectedPiece = this.state.squares[indxOfSelectedPiece];
         if (!(selectedPiece.isMovePossible(indxOfSelectedPiece, i)) || selectedPiece.player === this.state.playerTurn){
             return false;
@@ -72,7 +74,8 @@ export default class Game extends React.Component {
         return true;
     }
 
-    checkForWinner(){
+    checkForWinner = () => {
+        const {blackPieces, redPieces} = this.state
         if (blackPieces === 0){
             return 'Red Player';
         }
@@ -87,7 +90,7 @@ export default class Game extends React.Component {
         return (
             <div>
                 <div>
-                    <Board squares={this.state.squares} onClick = {(i) => clickHandler(i)} />
+                    <Board squares={this.state.squares} onClick = {(i) => this.clickHandler(i)} />
                 </div>
 
                 <div>
