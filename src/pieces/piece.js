@@ -8,8 +8,8 @@ export default class Piece {
     isMovePossible(curr_pos, next_pos){
         return ((curr_pos-1 === next_pos) ||
         (curr_pos+1 === next_pos) ||
-        (curr_pos+9 === next_pos) ||
-        (curr_pos-9 === next_pos) 
+        (curr_pos+8 === next_pos) ||
+        (curr_pos-8 === next_pos) 
         );
     }
 }
