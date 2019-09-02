@@ -8,65 +8,65 @@ export default function initBoard() {
     for (let indx = 0; indx < all_pieces.length; indx++) {
         if (kings) {
             if (kings <= 1) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg", 7);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg", 7, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg", 7);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg", 7, "hidden");
             };
             kings -= 1;
         }
         else if (queens) {
             if (queens <= 2) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg", 6);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg", 6, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg", 6);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg", 6, "hidden");
             };
             queens -= 1;
         }
         else if (horses) {
             if (horses <= 2) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg", 4);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg", 4, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg", 4);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg", 4, "hidden");
             };
             horses -= 1;
         }
         else if (cannons) {
             if (cannons <= 2) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg", 2);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg", 2, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg", 2);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg", 2, "hidden");
             };
             cannons -= 1;
 
         }
         else if (pawns) {
             if (pawns <= 5) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg", 1);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg", 1, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg", 1);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg", 1, "hidden");
             };
             pawns -= 1;
         }
         else if (rooks) {
             if (rooks <= 2) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg", 3);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg", 3, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg", 3);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg", 3, "hidden");
             };
             rooks -= 1;
         }
         else {
             if (elephants <= 2) {
-                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg", 5);
+                all_pieces[indx] = new Piece(2, "https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg", 5, "hidden");
             }
             else {
-                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg", 5);
+                all_pieces[indx] = new Piece(1, "https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg", 5, "hidden");
             };
             elephants -= 1;
         };

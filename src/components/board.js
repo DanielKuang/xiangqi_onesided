@@ -7,7 +7,8 @@ export default class Board extends React.Component {
         piece={this.props.squares[indx]} 
         onClick = {() => this.props.onClick(indx)}
         style = {this.props.squares[indx] ? this.props.squares[indx].style : null} 
-        shade = {squareShade} />);
+        shade = {squareShade}
+        visibility = {this.props.squares[indx] ? this.props.squares[indx].visibility : null} />);
     }
 
     render(){

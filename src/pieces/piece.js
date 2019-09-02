@@ -1,8 +1,9 @@
 export default class Piece {
-    constructor(player, imgLink, rank){
+    constructor(player, imgLink, rank, visibility){
         this.player = player;
         this.style = {backgroundImage: "url('"+imgLink+"')"};
         this.rank = rank;
+        this.visibility = visibility;
     }
 
     isMovePossible(curr_pos, next_pos){

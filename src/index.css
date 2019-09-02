@@ -59,10 +59,12 @@ ol, ul {
 
 .dark-square {
   background-color: RGB(187,190,100);
+  border:solid;
 }
 
 .light-square {
   background-color: RGB(234,240,206);
+  border:solid;
 }
 
 #player-turn-box {
