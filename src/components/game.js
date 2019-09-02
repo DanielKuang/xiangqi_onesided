@@ -19,7 +19,7 @@ export default class Game extends React.Component {
         const { playerTurn, indxOfSelectedPiece, squares } = this.state;
         const possWinner = this.checkForWinner();
         if (possWinner !== 'None') {
-            this.setState({ status: `Winner is ${possWinner}! This round is complete. Please click retry for another round.` });
+            this.setState({ status: `Winner is ${possWinner}! This round is complete. Please click restart for another round.` });
         }
         else if (indxOfSelectedPiece === null) {
             if (squares[i] !== null && squares[i].visibility === "hidden") {
@@ -96,6 +96,17 @@ export default class Game extends React.Component {
         this.setState({ playerTurn: nextPlayer, status: '', indxOfSelectedPiece: null });
     }
 
+    restartHandler = () => {
+        this.setState({
+            playerTurn: 1,
+            status: '',
+            squares: initBoard(),
+            indxOfSelectedPiece: null,
+            blackPieces: 16,
+            redPieces: 16,
+        })
+    }
+
     render() {
         return (
             <div className="game">
@@ -110,6 +121,8 @@ export default class Game extends React.Component {
                     <div id='player-turn-box' style={{ backgroundColor: this.state.playerTurn === 1 ? 'red' : 'black' }}></div>
                     <h3>Pass Turn</h3>
                     <button onClick={this.passHandler}>Pass</button>
+                    <h3>Restart</h3>
+                    <button onClick={this.restartHandler}>Restart</button>
                 </div>
 
             </div>
