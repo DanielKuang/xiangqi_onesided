@@ -15,7 +15,7 @@ export default class Game extends React.Component {
         }
     }
 
-    clickHandler(i) {
+    clickHandler = (i) => {
         const { playerTurn, indxOfSelectedPiece, squares } = this.state;
         const possWinner = this.checkForWinner();
         if (possWinner !== 'None') {
